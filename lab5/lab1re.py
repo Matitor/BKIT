@@ -47,21 +47,29 @@ def get_roots(a, b, c):
       return result
     elif a==0:
       root=(-c/b)
+      if root == 0:
+          result.append(0)
       if root>0:
         result.append(-(root**0.5))
         result.append(root**0.5)
     elif D == 0.0:
         root = (-b / (2.0*a))
-        if root>0:
+        if root == 0:
+          result.append(0)
+        elif root>0:
           result.append(-(root**0.5))
           result.append(root**0.5)
     elif D > 0.0:
         sqD = math.sqrt(D)
         root1 = (-b + sqD) / (2.0*a)
+        if root1 == 0:
+          result.append(0)
         if root1>0:
           result.append(-(root1**0.5))
           result.append(root1**0.5)
         root2 = (-b - sqD) / (2.0*a)
+        if root2 == 0:
+          result.append(0)
         if root2>0:
           result.append(-(root2**0.5))
           result.append(root2**0.5)
